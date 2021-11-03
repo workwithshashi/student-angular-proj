@@ -1,0 +1,28 @@
+<h1>{{student.name}}</h1>
+<h3>{{student.id}}</h3>  
+
+<p>Angular has Pipes | Filter --> Used to beautify UI</p>
+
+<h1>{{student.name | uppercase}}</h1>
+
+<h1>{{student.name | lowercase}}</h1>
+
+<p>Below is example of displaying list, where "*ngFor" is predefine angular directive</p>
+
+<div *ngFor = "let s of studentlist">
+    <span>{{s.name}}</span>
+</div>
+
+<ul *ngFor = "let s of studentlist">
+    <li>ID:{{s.id}} || Name:{{s.name}}</li>
+</ul>
+
+<p>-------------------------</p>
+<!-- <app-student-details [student]="student"></app-student-details> -->
+
+<!-- // Assingment  to be done -- Make HTML format correct -->
+<div >
+    <select *ngFor = "let s of studentlist">
+        <option>{{s.id}} || Name:{{s.name}}</option>
+    </select>
+</div>
