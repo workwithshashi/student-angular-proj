@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { StudentList } from '../models/studentListModel';
 import { Student } from '../models/studentModel';
+import { MessageService } from '../utilities/services/message.service';
+import { StudentService } from '../utilities/services/student.service';
 
 @Component({
   selector: 'app-student',
@@ -14,9 +16,21 @@ export class StudentComponent implements OnInit {
   }
   //local variable
   studentlist = StudentList;
-  constructor() { }
+  selectedStudent? : Student;
+  students : Student[] = [];
+  constructor(private messageService: MessageService, private studentService: StudentService) { }
 
-  ngOnInit(): void {  
+  ngOnInit(): void { 
+    this.getStudents();
+  }
+
+  onSelect(s : Student):void{
+    this.selectedStudent = s;
+    console.log(this.selectedStudent)
+  }
+
+  getStudents(): void{
+    this.studentService.getStudents().subscribe(students => this.students = students);
   }
 
 }

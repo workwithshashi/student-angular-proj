@@ -1,0 +1,6 @@
+.stud li{
+    cursor: pointer;
+    background-color: #EEE;
+    border-radius:  3px;
+    padding: 10px;
+}

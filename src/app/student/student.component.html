@@ -18,7 +18,7 @@
 </ul>
 
 <p>-------------------------</p>
-<!-- <app-student-details [student]="student"></app-student-details> -->
+
 
 <!-- // Assingment  to be done -- Make HTML format correct -->
 <div >
@@ -26,3 +26,21 @@
         <option>{{s.id}} || Name:{{s.name}}</option>
     </select>
 </div>
+
+<p>------ Completing Assingment -----------</p>
+
+<ul class="stud">
+    <li *ngFor = "let s of studentlist" [class.selected]="s === selectedStudent" (click)="onSelect(s)">
+        <span>{{s.id}}</span>,<span>{{s.name}}</span>
+        
+    </li>
+    <div *ngIf="selectedStudent">
+        <p>This student which is select is --> {{selectedStudent.name}}</p>
+    </div>
+
+</ul>
+
+<app-student-details [student]="selectedStudent"></app-student-details>
+
+
+

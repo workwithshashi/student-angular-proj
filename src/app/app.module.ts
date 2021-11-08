@@ -1,22 +1,25 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { StudentComponent } from './student/student.component';
 import { StudentDetailsComponent } from './student-details/student-details.component';
-import { StaffModule } from './staff/staff.module';
+import { MessageComponent } from './message/message.component';
+import { FormsModule } from '@angular/forms';
+import { ApicallComponent } from './utilities/apicall/apicall.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     StudentComponent,
-    StudentDetailsComponent
+    StudentDetailsComponent,
+    MessageComponent,
+    ApicallComponent
   ],
   imports: [
-    StaffModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
